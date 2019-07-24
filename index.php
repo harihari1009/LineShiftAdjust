@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
   <form action="" method="POST">
-    <input type="text" name="user name" placeholder="user name" value="<?php echo $username; ?>">
+    <input type="text" name="user name" placeholder="user name" value="<?php echo htmlspecialchars($username, ENT_QUOTES, 'UTF-8'); ?>">
     <input type="submit" value="Check!">
     <?php if ($err) { echo "Too long!"; } ?>
   </form>
