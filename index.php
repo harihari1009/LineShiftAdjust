@@ -31,7 +31,7 @@ require "function.php";
 
 	// 取得したデータを出力
 	foreach( $res as $value ) {
-		echo "$value[name]<br>";
+		echo "$value[date_created]<br>";
     }
     
     if ($err) { echo "Too long!"; } ?>
