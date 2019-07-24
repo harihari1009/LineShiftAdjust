@@ -22,7 +22,7 @@ require "function.php";
   <form action="" method="POST">
     <input type="text" name="username" placeholder="user name" value="<?php echo htmlspecialchars($username, ENT_QUOTES, 'UTF-8'); ?>">
     <input type="submit" value="Check!">
-    <?php dbConnect();
+    <?php echo dbConnect();
     if ($err) { echo "Too long!"; } ?>
   </form>
 </body>
