@@ -23,6 +23,17 @@ require "function.php";
     <input type="text" name="username" placeholder="user name" value="<?php echo htmlspecialchars($username, ENT_QUOTES, 'UTF-8'); ?>">
     <input type="submit" value="Check!">
     <?php echo dbConnect();
+    // SQL作成
+    $sql = "SELECT * FROM user";
+
+	// SQL実行
+	$res = $dbh->query($sql);
+
+	// 取得したデータを出力
+	foreach( $res as $value ) {
+		echo "$value[name]<br>";
+    }
+    
     if ($err) { echo "Too long!"; } ?>
   </form>
 </body>
