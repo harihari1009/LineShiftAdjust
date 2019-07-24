@@ -9,6 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 }
 
+require "function.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -18,9 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
   <form action="" method="POST">
-    <input type="text" name="user name" placeholder="user name" value="<?php echo htmlspecialchars($username, ENT_QUOTES, 'UTF-8'); ?>">
+    <input type="text" name="username" placeholder="user name" value="<?php echo htmlspecialchars($username, ENT_QUOTES, 'UTF-8'); ?>">
     <input type="submit" value="Check!">
-    <?php if ($err) { echo "Too long!"; } ?>
+    <?php dbConnect();
+    if ($err) { echo "Too long!"; } ?>
   </form>
 </body>
 </html>
